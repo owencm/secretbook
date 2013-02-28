@@ -37,19 +37,10 @@ function activate() {
 
 function openStegoObjectCreation() {
 	wrapper = document.createElement("div");
-
-	wrapper.style["width"] = "100%";
-	wrapper.style["position"] = "fixed";
-	wrapper.style["z-index"] = "9999";
-	wrapper.style["top"] = "20px";
+	$(wrapper).css({"width": "100%", "position: fixed", "z-index": "9999", "top": "20px"});
 
 	iframe = document.createElement("iframe");
-	iframe.style["width"] = "600px";
-	iframe.style["height"] = "400px";
-	iframe.style["background-color"] = "white";
-	iframe.style["margin"] = "0 auto";
-	iframe.style["display"] = "block";
-	iframe.style["border"] = 0;
+	$(iframe).css({"width": "600px", "height": "400px", "background-color": "white", "margin": "0 auto", "display": "block", "border": 0});
 
 	iframe.src = chrome.extension.getURL("index.html");
 	wrapper.appendChild(iframe);

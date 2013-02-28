@@ -1,0 +1,20 @@
+{
+	"name": "Steganography",
+	"description": "A secure protocol for communicating with friends over Facebook.",
+	"manifest_version": 2,
+	"version": "0.1",
+	"icons": {
+		"16": "images/favicon.gif",
+		"128": "images/128.png"
+	},
+    "content_scripts": [{
+        "js": ["js/jquery-1.9.1.js", "js/keymaster.js", "js/inject.js"],
+        "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"]
+    }],
+    "background": {
+    	"page": "index.html"
+    },
+    "web_accessible_resources": [
+    	"index.html", "js/jpg_encoder.js", "js/jpg_decoder.js", "js/seedrandom.js", "js/mlbc.js", "js/dct.js"
+    ]
+}

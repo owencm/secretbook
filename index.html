@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style style="text/css">
+      h1 {
+        font-family: sans-serif;
+        font-size: 1.5em;
+      }
+      label {
+        display:block;
+        margin: 15px 0 10px 0;
+        font-family: sans-serif;
+        font-weight: bold;
+      }
+      input {
+        display:block;
+      }
+      textarea {
+        display:block;
+      }
+      #message {
+        width: 400px;
+        height: 50px;
+      }
+      #encode-button {
+        margin-top: 15px;
+      }
+    </style>
+    <title>Steganography</title>
+  </head>
+  <body>
+    <h1>Generate a SecureBook image</h1>
+
+    <form>
+      <label for="image-select">Select an image</label>
+      <input type="file" id="image-select"></input>
+      <label for="message">Message to hide</label>
+      <textarea id="message"></textarea>
+      <label for="password">Shared password</label>
+      <input type="password" id="password" value=""></input>
+      <input type="submit" value="Create" id="encode-button"></input>
+    </form>
+
+    <img id="encoded"></img>
+
+    <!-- Reference Javascript -->
+    <script src="js/jpg_encoder.js"></script>
+    <script src="js/jpg_decoder.js"></script>
+    <script src="js/seedrandom.js"></script>
+    <script src="js/mlbc.js"></script>
+    <script src="js/dct.js"></script>
+    <script src="js/ui.js"></script>
+
+  </body>
+</html>

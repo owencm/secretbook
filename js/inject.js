@@ -37,7 +37,7 @@ function activate() {
 
 function openStegoObjectCreation() {
 	wrapper = document.createElement("div");
-	$(wrapper).css({"width": "100%", "position: fixed", "z-index": "9999", "top": "20px"});
+	$(wrapper).css({"width": "100%", "position": "fixed", "z-index": "9999", "top": "20px"});
 
 	iframe = document.createElement("iframe");
 	$(iframe).css({"width": "600px", "height": "400px", "background-color": "white", "margin": "0 auto", "display": "block", "border": 0});

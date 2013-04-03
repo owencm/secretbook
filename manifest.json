@@ -8,13 +8,13 @@
 		"128": "images/128.png"
 	},
     "content_scripts": [{
-        "js": ["js/jquery-1.9.1.js", "js/keymaster.js", "js/inject.js"],
+        "js": ["js/lib/jquery-1.9.1.js", "js/lib/keymaster.js", "js/inject.js"],
         "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"]
     }],
     "background": {
     	"page": "index.html"
     },
     "web_accessible_resources": [
-    	"index.html", "js/jpg_encoder.js", "js/jpg_decoder.js", "js/seedrandom.js", "js/mlbc.js", "js/dct.js"
+    	"index.html", "js/lib/jpg_encoder.js", "js/lib/jpg_decoder.js", "js/lib/seedrandom.js", "js/lib/mlbc.js", "js/lib/dct.js"
     ]
 }

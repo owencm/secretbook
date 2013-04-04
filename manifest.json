@@ -12,9 +12,10 @@
         "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"]
     }],
     "background": {
-    	"page": "index.html"
+    	"page": "background.html"
     },
     "web_accessible_resources": [
     	"index.html", "js/lib/jpg_encoder.js", "js/lib/jpg_decoder.js", "js/lib/seedrandom.js", "js/lib/mlbc.js", "js/lib/dct.js"
-    ]
+    ],
+    "permissions": ["tabs"]
 }

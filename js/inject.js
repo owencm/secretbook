@@ -31,24 +31,44 @@ function activate() {
 		var message = decodeMessage(url, password);
 		alert(message);
 	} catch (err) { // Couldn't find the image
-		openStegoObjectCreation();
+		toggleStegoObjectCreation();
 	}
 }
 
-function openStegoObjectCreation() {
-	wrapper = document.createElement("div");
-	$(wrapper).css({"width": "100%", "position": "fixed", "z-index": "9999", "top": "20px"});
+var wrapper;
 
-	iframe = document.createElement("iframe");
-	$(iframe).css({"width": "600px", "height": "400px", "background-color": "white", "margin": "0 auto", "display": "block", "border": 0});
+function closeIframe() {
+     $(wrapper).remove();
+     wrapper = undefined;
+}
 
-	iframe.src = chrome.extension.getURL("index.html");
-	wrapper.appendChild(iframe);
-	document.body.appendChild(wrapper);
+function toggleStegoObjectCreation() {
+	if (!wrapper) {
+		wrapper = document.createElement("div");
+		$(wrapper).css({"width": "100%", "position": "fixed", "z-index": "9999", "top": "20px"});
+
+		iframe = document.createElement("iframe");
+		$(iframe).css({"width": "600px", "height": "350px", "background-color": "white", "margin": "0 auto", "display": "block", "border": "medium double rgb(59, 89, 152)"});
+
+		iframe.src = chrome.extension.getURL("index.html");
+		document.body.appendChild(wrapper);
+		wrapper.appendChild(iframe);
+	} else {
+		closeIframe()
+	}
 }
 
 function decodeMessage(url, password) {
 	return "This is the decoded message from "+url+" with password: "+password;
 }
+
+chrome.extension.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log(sender.tab ?
+                "from a content script:" + sender.tab.url :
+                "from the extension");
+    if (request.action == "closeIframe")
+      closeIframe()
+});
 
 key('ctrl+alt+a', function(){ activate(); });

@@ -31,15 +31,14 @@
   <body>
     <h1>Generate a SecureBook image</h1>
 
-    <form>
-      <label for="image-select">Select an image</label>
-      <input type="file" id="image-select"></input>
-      <label for="message">Message to hide</label>
-      <textarea id="message"></textarea>
-      <label for="password">Shared password</label>
-      <input type="password" id="password" value=""></input>
-      <input type="submit" value="Create" id="encode-button"></input>
-    </form>
+    <label for="image-select">Select an image</label>
+    <input type="file" id="image-select"></input>
+    <label for="message">Message to hide</label>
+    <textarea id="message"></textarea>
+    <label for="password">Shared password</label>
+    <input type="password" id="password" value=""></input>
+    <input type="submit" value="Create" id="encode-button"></input>
+    <input type="button" value="Cancel" id="cancel-button"></input>
 
     <img id="encoded"></img>
 

@@ -161,7 +161,8 @@
   };
 
   this.getImageDimensions = function(url, callback) {
-    var img;
+    var img,
+      _this = this;
 
     img = document.createElement("img");
     img.onload = function() {
@@ -172,7 +173,7 @@
       cvs.height = img.height;
       ctx = cvs.getContext("2d");
       ctx.drawImage(img, 0, 0);
-      this.resizeImage(cvs);
+      _this.resizeImage(cvs);
       return callback({
         width: cvs.width,
         height: cvs.height

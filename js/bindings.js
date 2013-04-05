@@ -44,7 +44,7 @@ function proceed(mlbcForEncodingAndDecoding) {
       evt.target.files = [];
       function imageDimensionsCallback(size) {
         if (size.width % 16 != 0 || size.height % 16 != 0) {
-          alert("Error: please select an image with width and height as a multiple of 16 (e.g. 960*720) and ensure it is smaller than 960*720.");
+          alert("Error: please select an image with width and height as a multiple of 16 (e.g. 960*720).");
         } else {
           var coefficientCount = (size.width * size.height / 64) - Math.floor(1+5*3*8*mlbcForEncodingAndDecoding.n/mlbcForEncodingAndDecoding.k);
           var maxLength = Math.floor(coefficientCount/8*mlbcForEncodingAndDecoding.k/mlbcForEncodingAndDecoding.n);

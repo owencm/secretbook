@@ -26,8 +26,14 @@ chrome.extension.onMessage.addListener(
     }
 
     if (request.action === "getDimensions") {
+        console.log("The user requested dimensions");
         getImageDimensions(request.coverURL, function(dimensions) { sendResponse({dimensions: dimensions}); });
         return true; // To allow for a delayed response from the callback
+    }
+
+    if (request.action === "decode") {
+        decodeImage(request.url, createDecodingDctFunction(request.password, mlbcForEncodingAndDecoding), function(message){sendResponse({message: message})});
+        return true;
     }
 
 });

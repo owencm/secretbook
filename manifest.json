@@ -1,5 +1,5 @@
 {
-	"name": "Steganography",
+	"name": "Securebook",
 	"description": "A secure protocol for communicating with friends over Facebook.",
 	"manifest_version": 2,
 	"version": "0.1",
@@ -17,5 +17,5 @@
     "web_accessible_resources": [
     	"index.html", "js/lib/jpg_encoder.js", "js/lib/jpg_decoder.js", "js/lib/seedrandom.js", "js/lib/mlbc.js", "js/lib/dct.js"
     ],
-    "permissions": ["tabs"]
+    "permissions": ["tabs", "https://*/", "http://*/"]
 }

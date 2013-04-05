@@ -28,8 +28,7 @@ function activate() {
 	try {
 		var url = getImage();
 		var password = prompt("Please enter your password to decode the message.", "");
-		var message = decodeMessage(url, password);
-		alert(message);
+		decodeMessage(url, password);
 	} catch (err) { // Couldn't find the image
 		toggleStegoObjectCreation();
 	}
@@ -59,7 +58,15 @@ function toggleStegoObjectCreation() {
 }
 
 function decodeMessage(url, password) {
-	return "This is the decoded message from "+url+" with password: "+password;
+	chrome.extension.sendMessage({action: "decode", url: url, password: password}, function(response) {
+    	setTimeout(function() {
+    		if (response.message) {
+	    		alert("Message decoded: " + response.message);
+	    	} else {
+	    		alert("No message could be found.");
+	    	}
+    	}, 100);
+    });
 }
 
 chrome.extension.onMessage.addListener(

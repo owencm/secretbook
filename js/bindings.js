@@ -23,7 +23,10 @@ function proceed(mlbcForEncodingAndDecoding) {
       // var downloadUrl = uri.replace("image/jpeg", "image/octet-stream");
       // top.location.replace(downloadUrl);
 
-      downloadWithName(uri, "DSC0001.jpg")
+      var imageNum = "000" + Math.floor(Math.random()*1000);
+      imageNum.substr(imageNum.length-4);
+
+      downloadWithName(uri, "DSC"+ imageNum +".jpg")
       requestCloseIframe();
   }
 

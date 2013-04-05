@@ -47,7 +47,7 @@ function toggleStegoObjectCreation() {
 		$(wrapper).css({"width": "100%", "position": "fixed", "z-index": "9999", "top": "20px"});
 
 		iframe = document.createElement("iframe");
-		$(iframe).css({"width": "600px", "height": "350px", "background-color": "white", "margin": "0 auto", "display": "block", "border": "medium double rgb(59, 89, 152)"});
+		$(iframe).css({"width": "600px", "height": "380px", "background-color": "white", "margin": "0 auto", "display": "block", "border": "medium double rgb(59, 89, 152)"});
 
 		iframe.src = chrome.extension.getURL("index.html");
 		document.body.appendChild(wrapper);

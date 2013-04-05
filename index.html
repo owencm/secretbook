@@ -22,26 +22,43 @@
         width: 400px;
         height: 50px;
       }
-      #encode-button {
-        margin-top: 15px;
+      body {
+        font-family: sans-serif;
+        margin-left: 14px;
+      }
+      a {
+        text-decoration: none;
+      }
+      #cancel-button {
+        position: fixed;
+        top: 3px;
+        right: 9px;
+        color: rgb(58, 89, 152);
+        font-size: 1.5em;
+        font-weight: normal;
+        font-family: arial;
+      }
+      .hint {
+        font-size: 0.8em;
+
       }
     </style>
     <title>Steganography</title>
   </head>
   <body>
+    <a href="#" id="cancel-button">&times;</a>
     <h1>Generate a SecureBook image</h1>
 
     <label for="image-select">Select an image</label>
+    <p class="hint">Avoid images with large areas of sky or any single colour since these are prone to errors.</p>
     <input type="file" id="image-select"></input>
     <label for="message">Message to hide</label>
     <textarea id="message"></textarea>
     <label for="password">Shared password</label>
     <input type="password" id="password" value=""></input>
-    <input type="submit" value="Create" id="encode-button"></input>
-    <input type="button" value="Cancel" id="cancel-button"></input>
-
-    <img id="encoded"></img>
-
+    <p class="hint">After creating the image upload it to any album or post it on a friends wall for them to receive.</p>
+    <input type="submit" value="Create and download" id="encode-button"></input>
+    
     <!-- Reference Javascript -->
     <script src="js/bindings.js"></script>
 

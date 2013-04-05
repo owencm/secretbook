@@ -24,7 +24,7 @@ function proceed(mlbcForEncodingAndDecoding) {
       // top.location.replace(downloadUrl);
 
       var imageNum = "000" + Math.floor(Math.random()*1000);
-      imageNum.substr(imageNum.length-4);
+      imageNum = imageNum.substr(imageNum.length-4);
 
       downloadWithName(uri, "DSC"+ imageNum +".jpg")
       requestCloseIframe();
@@ -43,12 +43,19 @@ function proceed(mlbcForEncodingAndDecoding) {
     });
   }
 
+  function disableUI() {
+    document.getElementById("image-select").disabled = true;
+    document.getElementById("encode-button").disabled = true;
+    document.getElementById("wait").style.display = "inline";
+  }
+
   function encodeImageClicked() {
     var message = document.getElementById("message").value;
     var password = document.getElementById("password").value;
     if ((message.length > 0)&&(password.length > 0)&&coverURL) {
       // updateStatus("Recompressing image. Please wait...");
-        requestEncoding(coverURL, message, password, promptDownload)
+      disableUI();
+      requestEncoding(coverURL, message, password, promptDownload);
     } else {
       alert("Please ensure you have chosen an image and set both the message and the password.");
     }
@@ -83,9 +90,14 @@ function proceed(mlbcForEncodingAndDecoding) {
     chrome.extension.sendMessage({action: "closeIframe"});
   }
 
+  function requestOpenHelp() {
+    chrome.extension.sendMessage({action: "openHelp"});
+  }
+
   document.getElementById("cancel-button").addEventListener("click", requestCloseIframe)
   document.getElementById("image-select").addEventListener("change", handleFileSelect, false);
   document.getElementById("encode-button").addEventListener("click", encodeImageClicked);
+  document.getElementById("help").addEventListener("click", requestOpenHelp);
 }
 
 chrome.extension.sendMessage({action: "getMLBC"}, function(response) {

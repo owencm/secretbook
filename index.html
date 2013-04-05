@@ -40,7 +40,12 @@
       }
       .hint {
         font-size: 0.8em;
-
+      }
+      #encode-button {
+        display: inline;
+      }
+      #wait {
+        display: none;
       }
     </style>
     <title>Steganography</title>
@@ -49,6 +54,7 @@
     <a href="#" id="cancel-button">&times;</a>
     <h1>Generate a SecureBook image</h1>
 
+    <p class="hint">Stuck? Look in <a href="#" id="help">Help and Instructions</a>.</p>
     <label for="image-select">Select an image</label>
     <p class="hint">Avoid images with large areas of sky or any single colour since these are prone to errors.</p>
     <input type="file" id="image-select"></input>
@@ -58,7 +64,8 @@
     <input type="password" id="password" value=""></input>
     <p class="hint">After creating the image upload it to any album or post it on a friends wall for them to receive.</p>
     <input type="submit" value="Create and download" id="encode-button"></input>
-    
+    <span class="hint" id="wait">Please wait...</span>
+
     <!-- Reference Javascript -->
     <script src="js/bindings.js"></script>
 

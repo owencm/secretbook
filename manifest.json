@@ -1,10 +1,12 @@
 {
-	"name": "Securebook",
-	"description": "A secure protocol for communicating with friends over Facebook.",
+	"name": "Secretbook",
+	"description": "A steganography tool for hiding secret messages within photos on Facebook.",
 	"manifest_version": 2,
-	"version": "0.13",
+	"version": "0.15",
 	"icons": {
-		"16": "images/favicon.gif",
+		"16": "images/16.png",
+        "32": "images/32.png",
+        "64": "images/64.png",
 		"128": "images/128.png"
 	},
     "content_scripts": [{
@@ -15,7 +17,7 @@
     	"page": "background.html"
     },
     "web_accessible_resources": [
-    	"index.html", "js/lib/jpg_encoder.js", "js/lib/jpg_decoder.js", "js/lib/seedrandom.js", "js/lib/mlbc.js", "js/lib/dct.js"
+    	"index.html"
     ],
     "permissions": ["tabs", "https://*/", "http://*/"]
 }

@@ -1,4 +1,4 @@
-securebook
+secretbook
 ==========
 
 A Chrome app for Steganography on Facebook

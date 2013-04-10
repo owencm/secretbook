@@ -2,7 +2,7 @@
 	"name": "Secretbook",
 	"description": "A steganography tool for hiding secret messages within photos on Facebook.",
 	"manifest_version": 2,
-	"version": "0.15",
+	"version": "0.153",
 	"icons": {
 		"16": "images/16.png",
         "32": "images/32.png",
